@@ -13,4 +13,4 @@ data <- as_tibble(read.table("household_power_consumption.txt", header = TRUE, s
 data_cleaned <- mutate(data, Date = dmy(Date))
 
 final_data <- filter(data_cleaned, Date >= "2007-02-01" & Date <= "2007-02-02")
-
+final_data <- mutate(final_data, datetime = Date + Time)
